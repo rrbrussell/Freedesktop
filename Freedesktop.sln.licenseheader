@@ -1,3 +1,5 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
 // C# Support Library for Freedesktop.org specifications
 // Copyright (c) 2021 Robert R. Russell
 //
@@ -14,17 +16,3 @@
 // General Public License along with this program; if not, write to
 // the Free Software Foundation, Inc., 51 Franklin Street,
 // Fifth Floor, Boston, MA  02110-1301, USA.
-using System;
-using Xunit;
-
-namespace XBEL.Test
-{
-	public class UnitTest1
-	{
-		[Fact]
-		public void Test1()
-		{
-
-		}
-	}
-}
