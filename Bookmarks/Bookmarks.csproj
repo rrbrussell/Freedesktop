@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <NeutralLanguage>en-US</NeutralLanguage>
+	  <SignAssembly>true</SignAssembly>
+	  <AssemblyOriginatorKeyFile>freedesktop.bookmarks.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\zooho\source\repos\Freedesktop\Bookmarks\Bookmarks.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\zooho\source\repos\Freedesktop\Bookmarks\Bookmarks.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

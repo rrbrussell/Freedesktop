@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XBEL</name>
+    </assembly>
+    <members>
+        <member name="T:XBEL.Info">
+            <summary>
+            Stores program specific information for a bookmark.
+            </summary>
+        </member>
+        <member name="F:XBEL.Info.Metadata">
+            <summary>
+            Store the Metadata items for the current bookmark element. These are stored as a string containing raw XML.
+            This is done to preserve the contents for application specific manipulation.
+            </summary>
+        </member>
+        <member name="P:XBEL.Info.Empty">
+            <summary>
+            Is true if there is no metadata.
+            </summary>
+        </member>
+        <member name="M:XBEL.Info.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Load the information from an XMLReader
+            </summary>
+            <param name="reader">The source of the data.</param>
+        </member>
+        <member name="M:XBEL.Info.#ctor">
+            <summary>
+            Provide a default constructor.
+            </summary>
+        </member>
+    </members>
+</doc>
