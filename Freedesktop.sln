@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookmarks", "Bookmarks\Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBEL", "XBEL\XBEL.csproj", "{1B381958-8D2F-4E6B-BE69-273F74B33908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBEL.Test", "XBEL.Test\XBEL.Test.csproj", "{ECD21AF4-7863-4CED-8A8F-64A087A67F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBEL.Test", "XBEL.Test\XBEL.Test.csproj", "{ECD21AF4-7863-4CED-8A8F-64A087A67F90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7C48049-A747-4AF0-A51F-2B8A484C7F57}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
