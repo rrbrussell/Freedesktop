@@ -42,9 +42,18 @@ namespace XBEL
 		/// <param name="reader">The source of the data.</param>
 		public Info(XmlReader reader)
 		{
+			Load(reader);
+		}
+
+		/// <summary>
+		/// Loads new data into this instance
+		/// </summary>
+		/// <param name="reader">The data to load.</param>
+		public void Load(XmlReader reader)
+		{
 			if (reader.ReadState != ReadState.Initial)
 			{
-				throw new InvalidOperationException("Info does not process entire trees.");
+				throw new InvalidOperationException(message: "Info does not process entire trees.");
 			}
 			reader.ReadToDescendant("metadata");
 			while (reader.ReadState == ReadState.Interactive)
@@ -52,7 +61,7 @@ namespace XBEL
 				switch (reader.NodeType)
 				{
 					case XmlNodeType.Element:
-						if(!reader.Name.Equals("metadata"))
+						if (!reader.Name.Equals("metadata"))
 						{
 							throw new ApplicationException(message: "Info received non-metadata XML element");
 						}
@@ -60,7 +69,8 @@ namespace XBEL
 						if (temp.Equals(string.Empty))
 						{
 							Console.WriteLine("Received an empty metadata element.");
-						} else
+						}
+						else
 						{
 							this.Metadata.Add(temp);
 						}
