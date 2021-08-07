@@ -26,6 +26,12 @@
             </summary>
             <param name="reader">The source of the data.</param>
         </member>
+        <member name="M:XBEL.Info.Load(System.Xml.XmlReader)">
+            <summary>
+            Loads new data into this instance
+            </summary>
+            <param name="reader">The data to load.</param>
+        </member>
         <member name="M:XBEL.Info.#ctor">
             <summary>
             Provide a default constructor.
