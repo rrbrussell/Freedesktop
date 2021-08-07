@@ -7,7 +7,8 @@ pipeline {
         dotnetBuild(framework: 'net5.0', runtime: 'linux-x64', configuration: 'Release', project: 'XBEL/XBEL.csproj')
         dotnetPack(configuration: 'Release', project: 'XBEL/XBEL.csproj')
         dotnetTest(project: 'XBEL.Test/XBEL.Test.csproj', configuration: 'Release', framework: 'net5.0', runtime: 'linux-x64')
-        archiveArtifacts 'XBEL/bin/*'
+        archiveArtifacts(artifacts: 'XBEL/bin/Release/', onlyIfSuccessful: true)
+        fingerprint(targets: 'XBEL/bin/Release/')
         cleanWs(deleteDirs: true, cleanupMatrixParent: true, cleanWhenUnstable: true, cleanWhenSuccess: true, cleanWhenNotBuilt: true, cleanWhenFailure: true, cleanWhenAborted: true)
       }
     }
