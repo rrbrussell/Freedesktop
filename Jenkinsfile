@@ -1,22 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Restore and Build') {
+    stage('Work on XBEL') {
       steps {
-        dotnetRestore(runtime: 'linux-x64')
-        dotnetBuild(framework: 'net5.0', runtime: 'linux-x64', configuration: 'Release')
-        dotnetPack(configuration: 'Release', runtime: 'linux-x64')
-      }
-    }
-
-    stage('Run, Publish, Archive') {
-      agent any
-      steps {
-        dotnetTest(framework: 'net5.0', runtime: 'net5.0')
-        archiveArtifacts 'Bookmarks/bin/*'
+        dotnetRestore(runtime: 'linux-x64', project: 'XBEL.Test/XBEL.Test.csproj')
+        dotnetBuild(framework: 'net5.0', runtime: 'linux-x64', configuration: 'Release', project: 'XBEL/XBEL.csproj')
+        dotnetPack(configuration: 'Release', runtime: 'linux-x64', project: 'XBEL/XBEL.csproj')
+        dotnetTest(project: 'XBEL.Test/XBEL.Test.csproj', resultsDirectory: 'test_results', configuration: 'Release', framework: 'net5.0', runtime: 'linux-x64')
         archiveArtifacts 'XBEL/bin/*'
-        dotnetClean(framework: 'net5.0', configuration: 'Release', runtime: 'linux-x64')
-        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true, disableDeferredWipeout: true)
+        cleanWs(deleteDirs: true, cleanupMatrixParent: true, cleanWhenUnstable: true, cleanWhenSuccess: true, cleanWhenNotBuilt: true, cleanWhenFailure: true, cleanWhenAborted: true)
       }
     }
 
