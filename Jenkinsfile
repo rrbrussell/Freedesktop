@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Restore and Build') {
       steps {
-        withDotNet() {
+        withDotNet(sdk: '/usr/bin/dotnet') {
           dotnetRestore(runtime: 'linux-x64')
           dotnetBuild(framework: 'net5.0', runtime: 'linux-x64', configuration: 'Release')
           dotnetPack(configuration: 'Release', runtime: 'linux-x64')
