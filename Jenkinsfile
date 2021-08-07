@@ -9,10 +9,11 @@ pipeline {
     }
 
     stage('Run, Publish, Archive') {
+      agent any
       steps {
         dotnetTest()
         dotnetPublish()
-        archiveArtifacts './bin/*'
+        archiveArtifacts '*/bin/*'
         dotnetClean()
       }
     }
